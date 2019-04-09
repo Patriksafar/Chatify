@@ -1,0 +1,72 @@
+.mol-navigation-header__wrapper {
+  display: flex;
+  flex: 1 auto;
+  justify-content: space-around;
+  margin-bottom: 22px;
+}
+
+.mol-navigation-header .status {
+  flex: 1 1 auto;
+}
+
+.mol-navigation-header__image-status-indicator-container {
+  position: relative;
+  margin-right: 20px;
+}
+
+.mol-navigation-header__profile-image {
+  border-radius: 50%;
+
+  height: 50px;
+  width: 50px;
+}
+
+.mol-navigation-header__image-status-indicator-circle {
+  height: 16px;
+  width: 16px;
+  background: red;
+  border: 3px solid #282c34;
+  border-radius: 50%;
+
+  position: absolute;
+  right: -3px;
+  top: 33px;
+}
+
+.mol-navigation-header__user-name {
+  font-size: 24px;
+  margin: 0;
+}
+
+.mol-navigation-header__select-status {
+  font-size: 14px;
+  color: #F9411B;
+  cursor: pointer;
+}
+
+.mol-navigation__dot {
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+  background-color: #E9F2FF;
+}
+
+.mol-navigation-header__options-dot {
+  display: flex;
+  flex: 0 0 24px;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.mol-navigation-search__input {
+  background: #434a58;
+  border-radius: 16px;
+  width: 100%;
+  height: 32px;
+  border: none;
+
+  padding: 16px;
+  color: white;
+  margin-bottom: 40px;
+}

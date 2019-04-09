@@ -1,0 +1,13 @@
+/*
+  #282c34
+*/
+
+.ogm-main-navigation {
+  background-color: #282c34;
+  color: #fff;
+
+  flex: 0 0 400px;
+  height: 100vh;
+
+  padding: 23px;
+}
