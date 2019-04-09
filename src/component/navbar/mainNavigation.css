@@ -9,5 +9,5 @@
   flex: 0 0 400px;
   height: 100vh;
 
-  padding: 23px;
+  overflow-y: auto;
 }

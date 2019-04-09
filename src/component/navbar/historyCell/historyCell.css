@@ -1,0 +1,36 @@
+.mol-history-cell {
+  display: flex;
+  padding: 10px 23px;
+}
+
+.mol-history-cell:hover{
+  background-color: #393f4b;
+  cursor: pointer;
+}
+
+.mol-history-cell__name-of-user {
+  font-size: 19px;
+  margin: 0px 0px 3px ;
+}
+
+.mol-history-cell__time-ago {
+  font-size: 10px;
+  color: #D5D5D5;
+  flex: 0 0 80px;
+  text-align: right;
+}
+
+.mol-history-cell__content-wrapper {
+  flex: 1 1 auto;
+}
+
+.mol-history-cell__content-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mol-history-cell__old-message {
+  font-size: 14px;
+  color: #C2C2C2;
+  margin: 0px;
+}

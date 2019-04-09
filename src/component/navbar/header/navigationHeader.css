@@ -1,3 +1,7 @@
+.mol-navigation-header {
+    padding: 23px 23px 0px;
+}
+
 .mol-navigation-header__wrapper {
   display: flex;
   flex: 1 auto;
@@ -68,5 +72,8 @@
 
   padding: 16px;
   color: white;
+}
+
+.mol-navigation-search {
   margin-bottom: 40px;
 }

@@ -6,13 +6,13 @@ class NavigationHeader extends Component {
   render() {
     return (
       <div className="mol-navigation-header">
-        { this._renderInfo() }
-        { this._renderSearch() }
+        { this.__renderInfo() }
+        { this.__renderSearch() }
       </div>
     );
   }
 
-  _renderInfo() {
+  __renderInfo() {
     return (
       <div className="mol-navigation-header__wrapper">
       <ImageStatusIndicator />
@@ -34,7 +34,7 @@ class NavigationHeader extends Component {
 
   }
 
-  _renderSearch() {
+  __renderSearch() {
     return (
       <div className="mol-navigation-search">
         <input type="search" className="mol-navigation-search__input"  placeholder="Search for people"/>
