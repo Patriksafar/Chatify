@@ -16,5 +16,17 @@
 }
 
 .mol-image-status-indicator-circle--online {
+  background: #1BF991;
+}
 
+.mol-image-status-indicator-circle--away {
+  background: #FFAB61;
+}
+
+.mol-image-status-indicator-circle--busy {
+  background: #F9411B;
+}
+
+.mol-image-status-indicator-circle--offline {
+  background: grey;
 }
