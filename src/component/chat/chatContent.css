@@ -1,0 +1,57 @@
+.ogm-content {
+  flex: 1 1 auto;
+  overflow: hidden;
+  background: #F9F9F9;
+}
+
+.ogm-content__header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 23px 32px;
+  box-shadow: 0px 3px 6px #dfdfdf;
+  background: #ffffff;
+  margin-bottom: 6px;
+}
+
+.ogm-content__name-of-host {
+  color: #1A1A1A;
+  font-size: 24px;
+}
+
+.ogm-content__content {
+
+}
+
+.ogm-content__message-section {
+  height: calc( 100vh - 180px);
+  overflow-y: auto;
+  padding: 22px 32px;
+}
+
+
+.ogm-content__chat-input {
+  box-shadow: 0px 3px 6px #dfdfdf;
+  margin: 0px 32px;
+  height: 80px;
+  border-radius: 8px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.ogm-content__textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 23px;
+  line-height: 30px;
+
+}
+
+::placeholder {
+  font-size: 16px;
+  color: #C8C8C8;
+}

@@ -1,0 +1,68 @@
+.ogm-message {
+  margin-bottom: 25px;
+}
+
+.ogm-message__cell {
+  display: flex;
+  align-items: flex-end;
+}
+
+.ogm-message--incoming .ogm-message__cell {
+  justify-content: flex-start;
+}
+
+.ogm-message--me .ogm-message__cell {
+  justify-content: flex-end;
+}
+
+.ogm-message--incoming .ogm-message__text {
+  background: #ffffff;
+  color: #585858;
+  border-radius: 8px 0 8px
+}
+
+.ogm-message--incoming  .mol-profile-image {
+  margin-right: 16px;
+}
+
+.ogm-message--me .ogm-message__text {
+  background: #247BFF;
+  color: #ffffff;
+  border-radius: 0px 8px 0px;
+}
+
+.ogm-message--me  .mol-profile-image {
+  margin-left: 16px;
+}
+
+.ogm-message--me .ogm-message__date {
+  text-align: right;
+}
+
+.ogm-message__text {
+  padding: 19px;
+  box-shadow: 0px 1px 2px #dfdfdf;
+  max-width: 1200px;
+}
+
+.ogm-message__date {
+  color: #989898;
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.ogm-message p {
+  margin: 0px;
+}
+
+
+
+/*
+*
+*---------Overrides---------------
+*
+*/
+
+.ogm-message .mol-profile-image {
+  margin-bottom: 22px;
+}
