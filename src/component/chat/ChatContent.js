@@ -3,6 +3,31 @@ import Message from '../message/Message';
 import './chatContent.css';
 
 class ChatContent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {messages: [], newMessage: null};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    event.preventDefault()
+    this.setState({newMessage: event.target.value});
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();    
+    var joined = this.state.messages && this.state.messages.concat(this.state.newMessage);
+    this.setState({ messages: joined, newMessage: null })
+  }
+
+  handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      this.handleSubmit(e)
+    }
+  }
+
   componentDidMount() {
     this.scrollToBottom();
   }
@@ -11,24 +36,18 @@ class ChatContent extends Component {
     this.scrollToBottom();
   }
 
-  render() {
-    return (
-      <div className="ogm-content">
-        { this.__renderHeader() }
-        { this.__renderChatContent() }
-      </div>
-    );
-  }
-
   scrollToBottom() {
-    console.log(this.messagesEnd);
     this.messagesEnd.scrollIntoView({block: "end"});
   }
 
-  __renderHeader() {
-    return(
-      <div className="ogm-content__header">
-        <h2 className="ogm-content__name-of-host">Patrik Šafář</h2>
+
+  render() {
+    return (
+      <div className="ogm-content">
+        <div className="ogm-content__header">
+          <h2 className="ogm-content__name-of-host">Patrik Šafář</h2>
+        </div>
+        { this.__renderChatContent() }
       </div>
     );
   }
@@ -44,36 +63,25 @@ class ChatContent extends Component {
 
   __renderMessageInput() {
     return (
-      <div className="ogm-content__chat-input">
-        <textarea className="ogm-content__textarea" placeholder="Just send a message..." />
-      </div>
+      <form onSubmit={this.handleSubmit}>
+        <div className="ogm-content__chat-input">
+          <textarea className="ogm-content__textarea"
+           placeholder="Just send a message..."
+           value={this.state.newMessage || ''} 
+           onChange={this.handleChange}
+           onKeyDown={this.handleKeyDown }/>
+        </div>
+      </form>
     );
   }
 
   __renderMessages() {
     return (
       <div className="ogm-content__message-section">
-        <Message type="me" text="hi there!"/>
         <Message type="incoming" text="hello there Elon!"/>
-        <Message type="me" text="Dobrý den, mám dotaz ohledně ukradeného náramku, který jsem ztratil 14. 5. Náramek jsem si již zablokoval. Dobrý den, mám dotaz ohledně ukradeného náramku, který jsem ztratil 14. 5. Náramek jsem si již zablokoval"/>
-        <Message type="incoming" text="hello there Elon!"/>
-        <Message type="incoming" text="hello there Elon!"/>
-        <Message type="incoming" text="Dobrý den, mám dotaz ohledně ukradeného náramku, který jsem ztratil 14. 5. Náramek jsem si již zablokoval. Dobrý den, mám dotaz ohledně ukradeného náramku, který jsem ztratil 14. 5. Náramek jsem si již zablokoval"/>
-        <Message type="me" text="hi there!"/>
-        <Message type="incoming" text="hello there Elon!"/>
-        <Message type="incoming" text="hello there Elon!"/>
-        <Message type="incoming" text="hello there Elon!"/>
-        <Message type="incoming" text="hello there Elon!"/>
-        <Message type="incoming" text="Dobrý den, mám dotaz ohledně ukradeného náramku, který jsem ztratil 14. 5. Náramek jsem si již zablokoval. Dobrý den, mám dotaz ohledně ukradeného náramku, který jsem ztratil 14. 5. Náramek jsem si již zablokoval"/>
-        <Message type="me" text="hi there!"/>
-        <Message type="incoming" text="hello there Elon!"/>
-        <Message type="incoming" text="hello there Elon!"/>
-        <Message type="incoming" text="hello there Elon!"/>
-        <Message type="incoming" text="hello there Elon!"/>
-        <Message type="incoming" text="Dobrý den, mám dotaz ohledně ukradeného náramku, který jsem ztratil 14. 5. Náramek jsem si již zablokoval. Dobrý den, mám dotaz ohledně ukradeného náramku, který jsem ztratil 14. 5. Náramek jsem si již zablokoval"/>
-        <Message type="me" text="hi there!"/>
-        <Message type="incoming" text="hello there Elon!"/>
-        <Message type="incoming" text="hello there Elon!"/>
+        {this.state.messages && this.state.messages.map((message, index) => 
+          <Message key={index} type="me" text={message} />
+        )}
         <div ref={(el) => { this.messagesEnd = el; }} />
       </div>
     );
