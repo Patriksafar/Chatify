@@ -18,11 +18,11 @@ class MainNavigation extends Component {
     let historyList = [];
 
     for (var i = 0; i < 10; i++) {
-      historyList[i] = ( <HistoryCell key ={i} /> );
+      historyList[i] = ( <HistoryCell key={i} /> );
     }
 
     return historyList.map((item, index) => (
-      <HistoryCell key ={i} />
+      <HistoryCell key={index} />
     ));
 
   }
