@@ -7,7 +7,7 @@ class ImageStatusIndicator extends Component {
     return (
       <div className="mol-image-status-indicator">
         <ProfileImage />
-        <div className="mol-image-status-indicator-circle" />
+        <div className="mol-image-status-indicator-circle mol-image-status-indicator-circle--busy" />
       </div>
     );
   }

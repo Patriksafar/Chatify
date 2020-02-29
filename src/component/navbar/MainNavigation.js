@@ -17,7 +17,7 @@ class MainNavigation extends Component {
   __renderHistory() {
     let historyList = [];
 
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 2; i++) {
       historyList[i] = ( <HistoryCell key={i} /> );
     }
 
